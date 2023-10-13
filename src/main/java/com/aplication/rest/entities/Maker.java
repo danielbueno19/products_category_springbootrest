@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -34,6 +36,7 @@ public class Maker {
     private String name;
 
     @OneToMany(mappedBy = "maker", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @JsonIgnore
     private List<Product> productList = new ArrayList<>();
 }
 
@@ -55,6 +58,7 @@ public class Maker {
 2) se crea la relacion entre Fabricante y Producto, la cual esta dada por 1:*, un fabricante puede fabricar muchos productos
  - List<Product>: en una lista estariamos obteniendo los productos son fabricados por una empresa
    @OneToMany: indicando que es una relacion de uno a muchos y lo estamos mapeando con mappedBy = "maker", por tanto en la clase Product (producto) debe existir una instancia de Maker con el nombre "maker"
+   @JsonIgnore: indica que no lo serialize si es que no se lo he indicado
 
 
 */

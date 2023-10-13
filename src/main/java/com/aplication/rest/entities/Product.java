@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.*;
 
 @org.hibernate.annotations.Table(appliesTo = "producto")
@@ -24,6 +26,7 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "id_fabricante", nullable = false)
+    @JsonIgnore
     private Maker maker;
 }
 
@@ -46,6 +49,7 @@ public class Product {
  - private Maker maker;
    @ManyToOne: para indicar la contraparte de muchos a uno *:1
    @JoinColumn(name = "id_fabricante"): indico bajo que id se esta generando esta relacion, null para establecer que debe estar esta relacion
+   @JsonIgnore: indica que no lo serialize si es que no se lo he indicado
 
 
 */

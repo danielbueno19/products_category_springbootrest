@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @Repository
 public interface ProductRepository extends CrudRepository<Product, Long>{
 
-    List<Product> finProductByPriceBetween(BigDecimal minPrice, BigDecimal maxPrice);
+    List<Product> findProductByPriceBetween(BigDecimal minPrice, BigDecimal maxPrice);
 }
 
 /*
