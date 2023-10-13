@@ -1,5 +1,5 @@
 # products_category_springbootrest
-Sistema permite registar un Fabricante el cual produce unos servicios
+El sistema permite registar un Fabricante, el cual produce unos servicios.
 
 Los servicios que produce un fabricante pertenece a una categoria
 
